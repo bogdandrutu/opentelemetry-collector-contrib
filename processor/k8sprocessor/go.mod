@@ -10,8 +10,8 @@ require (
 	go.opencensus.io v0.22.4
 	go.opentelemetry.io/collector v0.10.1-0.20200916220616-3796e60d6905
 	go.uber.org/zap v1.16.0
-	k8s.io/api v0.19.1
-	k8s.io/apimachinery v0.19.1
+	k8s.io/api v0.19.2
+	k8s.io/apimachinery v0.19.2
 	k8s.io/client-go v0.19.1
 )
 
