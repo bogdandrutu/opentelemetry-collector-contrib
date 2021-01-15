@@ -191,6 +191,63 @@ func Test_signalfxeceiver_EndToEnd(t *testing.T) {
 	assert.Equal(t, componenterror.ErrAlreadyStopped, r.Shutdown(context.Background()))
 }
 
+func Test_signalfxeceiver_EndToEndSignalToSignal(t *testing.T) {
+	got := &sfxpb.DataPointUploadMessage{}
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		buf, err := ioutil.ReadAll(r.Body)
+		require.NoError(t, err)
+		require.NoError(t, got.Unmarshal(buf))
+	}))
+	defer ts.Close()
+
+	expCfg := &signalfxexporter.Config{
+		IngestURL:   ts.URL + "/v2/datapoint",
+		APIURL:      "http://localhost",
+		AccessToken: "access_token",
+	}
+	exp, err := signalfxexporter.NewFactory().CreateMetricsExporter(
+		context.Background(),
+		component.ExporterCreateParams{Logger: zap.NewNop()},
+		expCfg)
+	require.NoError(t, err)
+	require.NoError(t, exp.Start(context.Background(), componenttest.NewNopHost()))
+	defer exp.Shutdown(context.Background())
+
+	portRecv := testutil.GetAvailablePort(t)
+	addrRecv := fmt.Sprintf("localhost:%d", portRecv)
+	cfg := createDefaultConfig().(*Config)
+	cfg.Endpoint = addrRecv
+	r := newReceiver(zap.NewNop(), *cfg)
+	r.RegisterMetricsConsumer(exp)
+	require.NoError(t, r.Start(context.Background(), componenttest.NewNopHost()))
+	runtime.Gosched()
+	defer r.Shutdown(context.Background())
+
+	want := &sfxpb.DataPointUploadMessage{
+		Datapoints: []*sfxpb.DataPoint{
+			{
+				Metric: "test.metricXYZ",
+				Value: sfxpb.Datum{
+					IntValue: int64Ptr(160),
+				},
+				MetricType: sfxTypePtr(sfxpb.MetricType_COUNTER),
+				Dimensions: []*sfxpb.Dimension{
+					{
+						Key:   "sf_hires",
+						Value: "1",
+					},
+				},
+			},
+		},
+	}
+
+	msgBytes, err := want.Marshal()
+	require.NoError(t, err)
+	_, err = http.Post(fmt.Sprintf("http://%s/v2/datapoint", addrRecv), "application/x-protobuf", bytes.NewReader(msgBytes))
+	require.NoError(t, err)
+	assert.Equal(t, want, got)
+}
+
 func Test_sfxReceiver_handleReq(t *testing.T) {
 	config := createDefaultConfig().(*Config)
 	config.Endpoint = "localhost:0" // Actually not creating the endpoint
