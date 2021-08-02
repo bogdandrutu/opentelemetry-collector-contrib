@@ -1315,7 +1315,6 @@ go.opencensus.io v0.23.0/go.mod h1:XItmlyltB5F7CS4xOC1DcqMoFqwtC6OG2xF7mCv7P7E=
 go.opentelemetry.io/collector v0.30.2-0.20210723184018-3b7d6ce4830c h1:j22FIuvF7w4UjxSgNWfGwZ+QLoVFDazaKqdfErJWVtQ=
 go.opentelemetry.io/collector v0.30.2-0.20210723184018-3b7d6ce4830c/go.mod h1:0FNTwbt9+EAgunYeQDsRf5Q2KxtLxl8ePVkr/VYQ2T4=
 go.opentelemetry.io/collector/model v0.30.0/go.mod h1:PcHNnM+RUl0uD8VkSn93PO78N7kQYhfqpI/eki57pl4=
-go.opentelemetry.io/collector/model v0.30.2-0.20210719230137-809cae954ed3/go.mod h1:PcHNnM+RUl0uD8VkSn93PO78N7kQYhfqpI/eki57pl4=
 go.opentelemetry.io/collector/model v0.30.2-0.20210723184018-3b7d6ce4830c h1:QAIPOjFfdyg897AIeJIDX+Kz7G1N91Fk8bIWc6AK8oc=
 go.opentelemetry.io/collector/model v0.30.2-0.20210723184018-3b7d6ce4830c/go.mod h1:PcHNnM+RUl0uD8VkSn93PO78N7kQYhfqpI/eki57pl4=
 go.opentelemetry.io/contrib v0.21.0 h1:RMJ6GlUVzLYp/zmItxTTdAmr1gnpO/HHMFmvjAhvJQM=
