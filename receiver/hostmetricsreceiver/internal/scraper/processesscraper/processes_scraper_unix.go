@@ -20,6 +20,8 @@ package processesscraper
 import (
 	"runtime"
 
+	"github.com/shirou/gopsutil/v3/process"
+
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver/internal/scraper/processesscraper/internal/metadata"
 )
 
@@ -34,14 +36,14 @@ func (s *scraper) getProcessesMetadata() (processesMetadata, error) {
 
 	countByStatus := map[string]int64{}
 	for _, process := range processes {
-		var status string
+		var status []string
 		status, err = process.Status()
 		if err != nil {
 			// We expect an error in the case that a process has
 			// been terminated as we run this code.
 			continue
 		}
-		state, ok := charToState[status]
+		state, ok := psutilStatusToState[status[0]]
 		if !ok {
 			countByStatus[metadata.LabelStatus.Unknown]++
 			continue
@@ -80,15 +82,16 @@ func (s *scraper) getProcessesMetadata() (processesMetadata, error) {
 	}, nil
 }
 
-var charToState = map[string]string{
-	"A": metadata.LabelStatus.Daemon,
-	"D": metadata.LabelStatus.Blocked,
-	"E": metadata.LabelStatus.Detached,
-	"O": metadata.LabelStatus.Orphan,
-	"R": metadata.LabelStatus.Running,
-	"S": metadata.LabelStatus.Sleeping,
-	"T": metadata.LabelStatus.Stopped,
-	"W": metadata.LabelStatus.Paging,
-	"Y": metadata.LabelStatus.System,
-	"Z": metadata.LabelStatus.Zombies,
+// Based on https://github.com/shirou/gopsutil/blob/master/v3/process/process.go#L557
+var psutilStatusToState = map[string]string{
+	// Replace this with the right state string when https://github.com/shirou/gopsutil/issues/1171 is fixed.
+	"D":             metadata.LabelStatus.Blocked,
+	process.Idle:    metadata.LabelStatus.Idle,
+	process.Lock:    metadata.LabelStatus.Locked,
+	process.Running: metadata.LabelStatus.Running,
+	process.Sleep:   metadata.LabelStatus.Sleeping,
+	process.Stop:    metadata.LabelStatus.Stopped,
+	process.Wait:    metadata.LabelStatus.Paging,
+	process.Zombie:  metadata.LabelStatus.Zombies,
+	"":              metadata.LabelStatus.Unknown,
 }
