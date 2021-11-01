@@ -599,8 +599,8 @@ github.com/onsi/gomega v1.7.1/go.mod h1:XdKZgCCFLUoM/7CFJVPcG8C1xQ1AJ0vpAezJrB7J
 github.com/onsi/gomega v1.10.3/go.mod h1:V9xEwhxec5O8UDM77eCW8vLymOMltsqPVYWrpDsH8xc=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/common v0.37.1 h1:4zU8NH5yAZanA+tci9h2lMCUV7JkPfLK537Op2oDEfk=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/common v0.37.1/go.mod h1:pZlr3QuPXk3Q4EIQ/BsTu0ntDFt5JzJkEArkQN4A9d4=
-github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker v0.37.1 h1:z9HJn9EFxDLlhEUKAdphq/FNkz4WJ5rTKBdsHZKBhiA=
-github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker v0.37.1/go.mod h1:nhPv1fOINciXf97NKO5N0fpp1nyYiwKHV/uD9jkC5r8=
+github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker v0.38.0 h1:1Bav7aXNI2layC9s/7qrn0tUA4ic4TfUGEDEZxw7qt8=
+github.com/open-telemetry/opentelemetry-collector-contrib/internal/docker v0.38.0/go.mod h1:qfz/Y0EMlTX2VfRirAUD5DJy04/4VPA9HPLSIrhjmjs=
 github.com/opencontainers/go-digest v0.0.0-20170106003457-a6d0ee40d420/go.mod h1:cMLVZDEM3+U2I4VmLI6N8jQYUd2OVphdqWwCJHrFt2s=
 github.com/opencontainers/go-digest v0.0.0-20180430190053-c9281466c8b2/go.mod h1:cMLVZDEM3+U2I4VmLI6N8jQYUd2OVphdqWwCJHrFt2s=
 github.com/opencontainers/go-digest v1.0.0-rc1/go.mod h1:cMLVZDEM3+U2I4VmLI6N8jQYUd2OVphdqWwCJHrFt2s=
