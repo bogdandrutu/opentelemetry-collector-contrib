@@ -8,7 +8,7 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/common v0.45.1
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk v0.45.1
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger v0.45.1
-	github.com/signalfx/sapm-proto v0.7.2
+	github.com/signalfx/sapm-proto v0.8.0
 	github.com/stretchr/testify v1.7.0
 	go.opentelemetry.io/collector v0.45.1-0.20220219184850-89e0d42c11df
 	go.opentelemetry.io/collector/model v0.45.1-0.20220219184850-89e0d42c11df
