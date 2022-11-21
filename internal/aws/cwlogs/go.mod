@@ -3,7 +3,7 @@ module github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cw
 go 1.18
 
 require (
-	github.com/aws/aws-sdk-go v1.44.133
+	github.com/aws/aws-sdk-go v1.44.142
 	github.com/stretchr/testify v1.8.1
 	go.opentelemetry.io/collector/component v0.0.0-20221119033128-e3509cd9f772
 	go.uber.org/zap v1.23.0
