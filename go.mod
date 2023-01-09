@@ -172,7 +172,7 @@ require (
 	go.opentelemetry.io/collector/processor/batchprocessor v0.67.1-0.20221216200611-892d07dffbb8
 	go.opentelemetry.io/collector/processor/memorylimiterprocessor v0.67.1-0.20221216200611-892d07dffbb8
 	go.opentelemetry.io/collector/receiver/otlpreceiver v0.67.1-0.20221216200611-892d07dffbb8
-	golang.org/x/sys v0.3.0
+	golang.org/x/sys v0.4.0
 )
 
 require (
