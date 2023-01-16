@@ -14,7 +14,7 @@ require (
 	go.opentelemetry.io/collector/confmap v0.67.1-0.20221216200611-892d07dffbb8
 	go.opentelemetry.io/collector/consumer v0.67.1-0.20221216200611-892d07dffbb8
 	go.opentelemetry.io/collector/pdata v1.0.0-rc1.0.20221216200611-892d07dffbb8
-	google.golang.org/grpc v1.51.0
+	google.golang.org/grpc v1.52.0
 )
 
 require (
