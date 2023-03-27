@@ -5,13 +5,13 @@ go 1.18
 require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.70.0
 	github.com/pierrec/lz4 v2.6.1+incompatible
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.583
 	go.opentelemetry.io/collector v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/component v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/confmap v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/pdata v1.0.0-rc4.0.20230130215412-26bd7b2bf678
-	go.opentelemetry.io/collector/semconv v0.70.1-0.20230130215412-26bd7b2bf678
+	go.opentelemetry.io/collector/semconv v0.74.0
 	go.uber.org/zap v1.24.0
 	google.golang.org/protobuf v1.28.1
 )
