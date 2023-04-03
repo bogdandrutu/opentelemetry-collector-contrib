@@ -11,8 +11,8 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/metrics v0.70.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/k8sconfig v0.70.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/kubelet v0.70.0
-	github.com/shirou/gopsutil/v3 v3.22.12
-	github.com/stretchr/testify v1.8.1
+	github.com/shirou/gopsutil/v3 v3.23.3
+	github.com/stretchr/testify v1.8.2
 	go.opentelemetry.io/collector v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/component v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/confmap v0.70.1-0.20230130215412-26bd7b2bf678
@@ -94,6 +94,7 @@ require (
 	github.com/prometheus/common v0.39.0 // indirect
 	github.com/rs/cors v1.8.3 // indirect
 	github.com/seccomp/libseccomp-golang v0.9.2-0.20220502022130-f33da4d89646 // indirect
+	github.com/shoenig/go-m1cpu v0.1.4 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
@@ -112,7 +113,7 @@ require (
 	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/net v0.5.0 // indirect
 	golang.org/x/oauth2 v0.3.0 // indirect
-	golang.org/x/sys v0.4.0 // indirect
+	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/term v0.4.0 // indirect
 	golang.org/x/text v0.6.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
