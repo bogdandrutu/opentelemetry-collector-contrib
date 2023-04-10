@@ -8,13 +8,13 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusexporter v0.70.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.70.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver v0.70.0
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 	github.com/tilinna/clock v1.1.0
 	go.opentelemetry.io/collector v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/component v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/consumer v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/exporter/otlpexporter v0.70.1-0.20230130215412-26bd7b2bf678
-	go.opentelemetry.io/collector/featuregate v0.70.1-0.20230130215412-26bd7b2bf678
+	go.opentelemetry.io/collector/featuregate v0.75.0
 	go.opentelemetry.io/collector/pdata v1.0.0-rc4.0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/processor/batchprocessor v0.70.1-0.20230130215412-26bd7b2bf678
 	go.opentelemetry.io/collector/receiver/otlpreceiver v0.70.1-0.20230130215412-26bd7b2bf678
@@ -91,7 +91,7 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v0.35.0 // indirect
 	go.opentelemetry.io/otel/trace v1.12.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
-	go.uber.org/multierr v1.9.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/net v0.5.0 // indirect
 	golang.org/x/sys v0.4.0 // indirect
 	golang.org/x/text v0.6.0 // indirect
