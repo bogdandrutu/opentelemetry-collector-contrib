@@ -7,7 +7,7 @@ require (
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/stretchr/testify v1.8.2
 	go.opentelemetry.io/collector/component v0.78.1
-	go.opentelemetry.io/collector/confmap v0.78.1
+	go.opentelemetry.io/collector/confmap v0.78.2
 	go.opentelemetry.io/collector/exporter v0.78.1
 	go.opentelemetry.io/collector/featuregate v1.0.0-rcv0012
 )
