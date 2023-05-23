@@ -9,7 +9,7 @@ require (
 	go.etcd.io/bbolt v1.3.7
 	go.opentelemetry.io/collector v0.78.1
 	go.opentelemetry.io/collector/component v0.78.1
-	go.opentelemetry.io/collector/confmap v0.78.1
+	go.opentelemetry.io/collector/confmap v0.78.2
 	go.uber.org/zap v1.24.0
 )
 
