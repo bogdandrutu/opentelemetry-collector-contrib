@@ -374,8 +374,8 @@ github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/
 github.com/stretchr/testify v1.7.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/stretchr/testify v1.8.0/go.mod h1:yNjHg4UonilssWZ8iaSj1OCr/vHnekPRkoO+kdMU+MU=
 github.com/stretchr/testify v1.8.1/go.mod h1:w2LPCIKwWwSfY2zedu0+kehJoqGctiVI29o6fzry7u4=
-github.com/stretchr/testify v1.8.2 h1:+h33VjcLVPDHtOdpUCuF+7gSuG3yGIftsP1YvFihtJ8=
-github.com/stretchr/testify v1.8.2/go.mod h1:w2LPCIKwWwSfY2zedu0+kehJoqGctiVI29o6fzry7u4=
+github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
+github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
 github.com/syndtr/gocapability v0.0.0-20200815063812-42c35b437635/go.mod h1:hkRG7XYTFWNJGYcbNJQlaLq0fg1yr4J4t/NcTQtrfww=
 github.com/testcontainers/testcontainers-go v0.20.1 h1:mK15UPJ8c5P+NsQKmkqzs/jMdJt6JMs5vlw2y4j92c0=
 github.com/testcontainers/testcontainers-go v0.20.1/go.mod h1:zb+NOlCQBkZ7RQp4QI+YMIHyO2CQ/qsXzNF5eLJ24SY=
@@ -399,8 +399,8 @@ go.opentelemetry.io/collector v0.78.1 h1:bcquLpoYZ0Y+USWCMvn3JiAaJvsBc5Z9HljZRco
 go.opentelemetry.io/collector v0.78.1/go.mod h1:fVGv9Cr2e2ZNb82U8fCkraC7ujg5E4Qwf2k2s/GyXvo=
 go.opentelemetry.io/collector/component v0.78.1 h1:KG4N0Kfl2oBN2utDXpYRN1vQ4V1sknihH55Tvs8htEU=
 go.opentelemetry.io/collector/component v0.78.1/go.mod h1:40VqQaeXncgTm1E+EK0uGFv9gvrah5NTXTrn6C9TuIY=
-go.opentelemetry.io/collector/confmap v0.78.1 h1:nALyvRooTBhTH6SKBMtGxsFHBw8QO+RMZKjnha9tx9k=
-go.opentelemetry.io/collector/confmap v0.78.1/go.mod h1:nudYcQJDF5zmAd2GKe5PetMF8/Lg1Mc/EjAKQBXHdyg=
+go.opentelemetry.io/collector/confmap v0.79.0 h1:a4XVde3lLP81BiSbt8AzVD6pvQBX8YkrB9ZtMSHKv1A=
+go.opentelemetry.io/collector/confmap v0.79.0/go.mod h1:cKr2c7lVtEJCuMOncUPlcROJBbTFaHiPjYp1Y8RbL+Q=
 go.opentelemetry.io/collector/consumer v0.78.1 h1:yD2ECKX6egbY8NRxn8Xhl+4+40ZdjD4BW51fNXNp7qc=
 go.opentelemetry.io/collector/consumer v0.78.1/go.mod h1:0vzYDn6eYmIDdC6CgTr/ATVlwutFk1Abet49/heKSmA=
 go.opentelemetry.io/collector/exporter v0.78.1 h1:HPxcCdgrjjB4kqglBFxjqTbqYY6PhIlPFzaozFxY5LU=
