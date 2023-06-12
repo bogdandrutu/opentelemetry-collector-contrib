@@ -5,9 +5,9 @@ go 1.19
 require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.77.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/stanza v0.77.0
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.4
 	go.opentelemetry.io/collector/component v0.78.1
-	go.opentelemetry.io/collector/confmap v0.78.1
+	go.opentelemetry.io/collector/confmap v0.79.0
 	go.opentelemetry.io/collector/consumer v0.78.1
 	go.opentelemetry.io/collector/receiver v0.78.1
 	golang.org/x/sys v0.8.0
