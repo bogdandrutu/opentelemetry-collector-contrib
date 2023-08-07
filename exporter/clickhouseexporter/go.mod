@@ -3,10 +3,10 @@ module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/clickh
 go 1.19
 
 require (
-	github.com/ClickHouse/clickhouse-go/v2 v2.9.3
+	github.com/ClickHouse/clickhouse-go/v2 v2.12.1
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.77.0
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.3
 	go.opentelemetry.io/collector/component v0.78.1
 	go.opentelemetry.io/collector/confmap v0.78.1
 	go.opentelemetry.io/collector/exporter v0.78.1
@@ -45,9 +45,9 @@ require (
 	go.opentelemetry.io/collector/consumer v0.78.1 // indirect
 	go.opentelemetry.io/collector/featuregate v1.0.0-rcv0012 // indirect
 	go.opentelemetry.io/collector/receiver v0.78.1 // indirect
-	go.opentelemetry.io/otel v1.15.1 // indirect
-	go.opentelemetry.io/otel/metric v0.38.1 // indirect
-	go.opentelemetry.io/otel/trace v1.15.1 // indirect
+	go.opentelemetry.io/otel v1.16.0 // indirect
+	go.opentelemetry.io/otel/metric v1.16.0 // indirect
+	go.opentelemetry.io/otel/trace v1.16.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
