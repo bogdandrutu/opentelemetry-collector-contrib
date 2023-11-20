@@ -9,14 +9,14 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/splunk v0.77.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger v0.77.0
 	github.com/signalfx/sapm-proto v0.12.0
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.4
 	go.opentelemetry.io/collector v0.78.1
 	go.opentelemetry.io/collector/component v0.78.1
 	go.opentelemetry.io/collector/confmap v0.78.1
 	go.opentelemetry.io/collector/consumer v0.78.1
 	go.opentelemetry.io/collector/pdata v1.0.0-rcv0012
 	go.opentelemetry.io/collector/receiver v0.78.1
-	go.opentelemetry.io/collector/semconv v0.78.1
+	go.opentelemetry.io/collector/semconv v0.89.0
 )
 
 require (
