@@ -10,7 +10,7 @@ require (
 	github.com/lib/pq v1.10.9
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.77.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest v0.77.0
-	github.com/sijms/go-ora/v2 v2.7.6
+	github.com/sijms/go-ora/v2 v2.7.23
 	github.com/snowflakedb/gosnowflake v1.6.18
 	github.com/stretchr/testify v1.8.2
 	github.com/testcontainers/testcontainers-go v0.20.1
