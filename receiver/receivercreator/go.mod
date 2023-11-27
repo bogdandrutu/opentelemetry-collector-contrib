@@ -3,12 +3,12 @@ module github.com/open-telemetry/opentelemetry-collector-contrib/receiver/receiv
 go 1.19
 
 require (
-	github.com/antonmedv/expr v1.12.5
+	github.com/antonmedv/expr v1.15.5
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/observer v0.77.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/sharedcomponent v0.77.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest v0.77.0
 	github.com/spf13/cast v1.5.1
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.4
 	go.opentelemetry.io/collector v0.78.1
 	go.opentelemetry.io/collector/component v0.78.1
 	go.opentelemetry.io/collector/confmap v0.78.1
