@@ -9,14 +9,14 @@ require (
 	github.com/jaegertracing/jaeger v1.41.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.77.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger v0.77.0
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.4
 	go.opentelemetry.io/collector v0.78.1
 	go.opentelemetry.io/collector/component v0.78.1
 	go.opentelemetry.io/collector/confmap v0.78.1
 	go.opentelemetry.io/collector/consumer v0.78.1
 	go.opentelemetry.io/collector/exporter v0.78.1
 	go.opentelemetry.io/collector/pdata v1.0.0-rcv0012
-	go.opentelemetry.io/collector/semconv v0.78.1
+	go.opentelemetry.io/collector/semconv v0.90.1
 	go.uber.org/multierr v1.11.0
 	go.uber.org/zap v1.24.0
 )
