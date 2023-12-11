@@ -6,7 +6,7 @@ go 1.19
 require (
 	github.com/hashicorp/golang-lru v0.6.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.77.0
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.4
 	github.com/tilinna/clock v1.1.0
 	go.opentelemetry.io/collector v0.78.1
 	go.opentelemetry.io/collector/component v0.78.1
@@ -14,7 +14,7 @@ require (
 	go.opentelemetry.io/collector/consumer v0.78.1
 	go.opentelemetry.io/collector/exporter v0.78.1
 	go.opentelemetry.io/collector/exporter/otlpexporter v0.78.1
-	go.opentelemetry.io/collector/featuregate v1.0.0-rcv0012
+	go.opentelemetry.io/collector/featuregate v1.0.0
 	go.opentelemetry.io/collector/pdata v1.0.0-rcv0012
 	go.opentelemetry.io/collector/semconv v0.78.1
 	go.uber.org/zap v1.24.0
@@ -31,6 +31,7 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
+	github.com/hashicorp/go-version v1.6.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/compress v1.16.5 // indirect
 	github.com/knadh/koanf v1.5.0 // indirect
