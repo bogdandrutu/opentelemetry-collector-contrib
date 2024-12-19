@@ -6,6 +6,7 @@ package memoryscraper // import "github.com/open-telemetry/opentelemetry-collect
 import (
 	"context"
 
+	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/receiver"
 	"go.opentelemetry.io/collector/scraper"
 
@@ -15,9 +16,9 @@ import (
 
 // This file implements Factory for Memory scraper.
 
-const (
-	// TypeStr the value of "type" key in configuration.
-	TypeStr = "memory"
+var (
+	// Type the value of "type" key in configuration.
+	Type = component.MustNewType("memory")
 )
 
 // Factory is the Factory for scraper.

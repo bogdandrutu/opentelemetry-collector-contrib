@@ -8,6 +8,7 @@ import (
 	"errors"
 	"runtime"
 
+	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/receiver"
 	"go.opentelemetry.io/collector/scraper"
 
@@ -17,9 +18,9 @@ import (
 
 // This file implements Factory for System scraper.
 
-const (
-	// TypeStr the value of "type" key in configuration.
-	TypeStr = "system"
+var (
+	// Type the value of "type" key in configuration.
+	Type = component.MustNewType("system")
 )
 
 // Factory is the Factory for scraper.

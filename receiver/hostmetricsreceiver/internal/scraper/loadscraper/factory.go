@@ -6,6 +6,7 @@ package loadscraper // import "github.com/open-telemetry/opentelemetry-collector
 import (
 	"context"
 
+	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/receiver"
 	"go.opentelemetry.io/collector/scraper"
 
@@ -15,9 +16,9 @@ import (
 
 // This file implements Factory for Load scraper.
 
-const (
-	// TypeStr the value of "type" key in configuration.
-	TypeStr = "load"
+var (
+	// Type the value of "type" key in configuration.
+	Type = component.MustNewType("load")
 )
 
 // Factory is the Factory for scraper.

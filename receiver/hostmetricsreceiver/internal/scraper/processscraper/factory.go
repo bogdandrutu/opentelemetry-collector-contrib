@@ -8,6 +8,7 @@ import (
 	"errors"
 	"runtime"
 
+	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/featuregate"
 	"go.opentelemetry.io/collector/receiver"
 	"go.opentelemetry.io/collector/scraper"
@@ -18,9 +19,9 @@ import (
 
 // This file implements Factory for Process scraper.
 
-const (
-	// TypeStr the value of "type" key in configuration.
-	TypeStr = "process"
+var (
+	// Type the value of "type" key in configuration.
+	Type = component.MustNewType("process")
 )
 
 var (
