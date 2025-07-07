@@ -42,6 +42,10 @@ func NewFactory() exporter.Factory {
 func createDefaultConfig() component.Config {
 	qs := exporterhelper.NewDefaultQueueConfig()
 	qs.Enabled = false
+	qs.Batch = &exporterhelper.BatchConfig{
+		FlushTimeout: 30 * time.Second,
+		MinSize:      defaultBatcherMinSizeItems,
+	}
 
 	httpClientConfig := confighttp.NewDefaultClientConfig()
 	httpClientConfig.Timeout = 90 * time.Second
@@ -82,15 +86,6 @@ func createDefaultConfig() component.Config {
 			LogFailedDocsInputRateLimit: time.Second,
 		},
 		IncludeSourceOnError: nil,
-		Batcher: BatcherConfig{
-			BatcherConfig: exporterhelper.BatcherConfig{ //nolint:staticcheck
-				FlushTimeout: 30 * time.Second,
-				SizeConfig: exporterhelper.SizeConfig{ //nolint:staticcheck
-					Sizer:   exporterhelper.RequestSizerTypeItems,
-					MinSize: defaultBatcherMinSizeItems,
-				},
-			},
-		},
 		Flush: FlushSettings{
 			Bytes:    5e+6,
 			Interval: 30 * time.Second,
@@ -207,15 +202,6 @@ func exporterhelperOptions(
 		exporterhelper.WithStart(start),
 		exporterhelper.WithShutdown(shutdown),
 		exporterhelper.WithQueue(cfg.QueueSettings),
-	}
-	if cfg.Batcher.enabledSet {
-		opts = append(opts, exporterhelper.WithBatcher(cfg.Batcher.BatcherConfig)) //nolint:staticcheck
-
-		// Effectively disable timeout_sender because timeout is enforced in bulk indexer.
-		//
-		// We keep timeout_sender enabled in the async mode (Batcher.Enabled == nil),
-		// to ensure sending data to the background workers will not block indefinitely.
-		opts = append(opts, exporterhelper.WithTimeout(exporterhelper.TimeoutConfig{Timeout: 0}))
 	}
 	return opts
 }

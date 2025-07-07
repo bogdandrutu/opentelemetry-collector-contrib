@@ -118,15 +118,6 @@ func TestConfig(t *testing.T) {
 					PrefixSeparator: "-",
 					DateFormat:      "%Y.%m.%d",
 				},
-				Batcher: BatcherConfig{
-					BatcherConfig: exporterhelper.BatcherConfig{ //nolint:staticcheck
-						FlushTimeout: 30 * time.Second,
-						SizeConfig: exporterhelper.SizeConfig{ //nolint:staticcheck
-							Sizer:   exporterhelper.RequestSizerTypeItems,
-							MinSize: defaultBatcherMinSizeItems,
-						},
-					},
-				},
 				TelemetrySettings: TelemetrySettings{
 					LogFailedDocsInputRateLimit: time.Second,
 				},
@@ -197,15 +188,6 @@ func TestConfig(t *testing.T) {
 					Enabled:         false,
 					PrefixSeparator: "-",
 					DateFormat:      "%Y.%m.%d",
-				},
-				Batcher: BatcherConfig{
-					BatcherConfig: exporterhelper.BatcherConfig{ //nolint:staticcheck
-						FlushTimeout: 30 * time.Second,
-						SizeConfig: exporterhelper.SizeConfig{ //nolint:staticcheck
-							Sizer:   exporterhelper.RequestSizerTypeItems,
-							MinSize: defaultBatcherMinSizeItems,
-						},
-					},
 				},
 				TelemetrySettings: TelemetrySettings{
 					LogFailedDocsInputRateLimit: time.Second,
@@ -278,15 +260,6 @@ func TestConfig(t *testing.T) {
 					PrefixSeparator: "-",
 					DateFormat:      "%Y.%m.%d",
 				},
-				Batcher: BatcherConfig{
-					BatcherConfig: exporterhelper.BatcherConfig{ //nolint:staticcheck
-						FlushTimeout: 30 * time.Second,
-						SizeConfig: exporterhelper.SizeConfig{ //nolint:staticcheck
-							Sizer:   exporterhelper.RequestSizerTypeItems,
-							MinSize: defaultBatcherMinSizeItems,
-						},
-					},
-				},
 				TelemetrySettings: TelemetrySettings{
 					LogFailedDocsInputRateLimit: time.Second,
 				},
@@ -317,16 +290,6 @@ func TestConfig(t *testing.T) {
 			}),
 		},
 		{
-			id:         component.NewIDWithName(metadata.Type, "batcher_disabled"),
-			configFile: "config.yaml",
-			expected: withDefaultConfig(func(cfg *Config) {
-				cfg.Endpoint = "https://elastic.example.com:9200"
-
-				cfg.Batcher.Enabled = false
-				cfg.Batcher.enabledSet = true
-			}),
-		},
-		{
 			id:         component.NewIDWithName(metadata.Type, "compression_none"),
 			configFile: "config.yaml",
 			expected: withDefaultConfig(func(cfg *Config) {
@@ -342,16 +305,6 @@ func TestConfig(t *testing.T) {
 				cfg.Endpoint = "https://elastic.example.com:9200"
 
 				cfg.Compression = "gzip"
-			}),
-		},
-		{
-			id:         component.NewIDWithName(metadata.Type, "batcher_minmax_size"),
-			configFile: "config.yaml",
-			expected: withDefaultConfig(func(cfg *Config) {
-				cfg.Endpoint = "https://elastic.example.com:9200"
-
-				cfg.Batcher.MinSize = 100
-				cfg.Batcher.MaxSize = 200
 			}),
 		},
 		{

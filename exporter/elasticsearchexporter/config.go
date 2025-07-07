@@ -16,7 +16,6 @@ import (
 	"go.opentelemetry.io/collector/config/configcompression"
 	"go.opentelemetry.io/collector/config/confighttp"
 	"go.opentelemetry.io/collector/config/configopaque"
-	"go.opentelemetry.io/collector/confmap"
 	"go.opentelemetry.io/collector/exporter/exporterhelper"
 	"go.uber.org/zap"
 )
@@ -92,35 +91,6 @@ type Config struct {
 	// request payload, causing potential sensitive data to be exposed in logs.
 	// Users are expected to sanitize the responses themselves.
 	IncludeSourceOnError *bool `mapstructure:"include_source_on_error"`
-
-	// Batcher holds configuration for batching requests based on timeout
-	// and size-based thresholds.
-	//
-	// Batcher is unused by default, in which case Flush will be used.
-	// If Batcher.Enabled is non-nil (i.e. batcher::enabled is specified),
-	// then the Flush will be ignored even if Batcher.Enabled is false.
-	Batcher BatcherConfig `mapstructure:"batcher"`
-}
-
-// BatcherConfig holds configuration for exporterbatcher.
-//
-// This is a slightly modified version of exporterbatcher.Config,
-// to enable tri-state Enabled: unset, false, true.
-type BatcherConfig struct {
-	exporterhelper.BatcherConfig `mapstructure:",squash"`
-
-	// enabledSet tracks whether Enabled has been specified.
-	// If enabledSet is false, the exporter will perform its
-	// own buffering.
-	enabledSet bool `mapstructure:"-"`
-}
-
-func (c *BatcherConfig) Unmarshal(conf *confmap.Conf) error {
-	if err := conf.Unmarshal(c); err != nil {
-		return err
-	}
-	c.enabledSet = conf.IsSet("enabled")
-	return nil
 }
 
 type TelemetrySettings struct {

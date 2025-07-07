@@ -746,12 +746,10 @@ func TestExporterLogs(t *testing.T) {
 
 		cfgs := map[string]func(*Config){
 			"async": func(cfg *Config) {
-				cfg.Batcher.enabledSet = false
+				cfg.QueueSettings.Enabled = false
 			},
 			"sync": func(cfg *Config) {
-				cfg.Batcher.enabledSet = true
-				cfg.Batcher.Enabled = true
-				cfg.Batcher.FlushTimeout = 10 * time.Millisecond
+				cfg.QueueSettings.Enabled = true
 			},
 		}
 		for _, tt := range tableTests {
@@ -822,11 +820,10 @@ func TestExporterLogs(t *testing.T) {
 
 		cfgs := map[string]func(*Config){
 			"async": func(cfg *Config) {
-				cfg.Batcher.Enabled = false
+				cfg.QueueSettings.Enabled = false
 			},
 			"sync": func(cfg *Config) {
-				cfg.Batcher.Enabled = true
-				cfg.Batcher.FlushTimeout = 10 * time.Millisecond
+				cfg.QueueSettings.Enabled = true
 			},
 		}
 		for _, tt := range tableTests {
@@ -2389,12 +2386,10 @@ func TestExporterBatcher(t *testing.T) {
 	var requests []*http.Request
 	testauthID := component.NewID(component.MustNewType("authtest"))
 	exporter := newUnstartedTestLogsExporter(t, "http://testing.invalid", func(cfg *Config) {
-		batcherCfg := exporterhelper.NewDefaultBatcherConfig() //nolint:staticcheck
-		batcherCfg.Enabled = false
-		cfg.Batcher = BatcherConfig{
-			// sync bulk indexer is used without batching
-			BatcherConfig: batcherCfg,
-			enabledSet:    true,
+		cfg.QueueSettings.Enabled = true
+		cfg.QueueSettings.Batch = &exporterhelper.BatchConfig{
+			FlushTimeout: 200 * time.Millisecond,
+			MinSize:      8192,
 		}
 		cfg.Auth = &configauth.Config{AuthenticatorID: testauthID}
 		cfg.Retry.Enabled = false
