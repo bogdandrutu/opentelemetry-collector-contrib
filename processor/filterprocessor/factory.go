@@ -34,7 +34,7 @@ type filterProcessorFactory struct {
 	logFunctions                        map[string]ottl.Factory[ottllog.TransformContext]
 	metricFunctions                     map[string]ottl.Factory[ottlmetric.TransformContext]
 	spanEventFunctions                  map[string]ottl.Factory[ottlspanevent.TransformContext]
-	spanFunctions                       map[string]ottl.Factory[ottlspan.TransformContext]
+	spanFunctions                       map[string]ottl.Factory[*ottlspan.TransformContext]
 	profileFunctions                    map[string]ottl.Factory[ottlprofile.TransformContext]
 	defaultResourceFunctionsOverridden  bool
 	defaultDataPointFunctionsOverridden bool
@@ -110,10 +110,10 @@ func WithSpanEventFunctions(spanEventFunctions []ottl.Factory[ottlspanevent.Tran
 
 // WithSpanFunctions will override the default OTTL span context functions with the provided spanFunctions in the resulting processor.
 // Subsequent uses of WithSpanFunctions will merge the provided spanFunctions with the previously registered functions.
-func WithSpanFunctions(spanFunctions []ottl.Factory[ottlspan.TransformContext]) FactoryOption {
+func WithSpanFunctions(spanFunctions []ottl.Factory[*ottlspan.TransformContext]) FactoryOption {
 	return func(factory *filterProcessorFactory) {
 		if !factory.defaultSpanFunctionsOverridden {
-			factory.spanFunctions = map[string]ottl.Factory[ottlspan.TransformContext]{}
+			factory.spanFunctions = map[string]ottl.Factory[*ottlspan.TransformContext]{}
 			factory.defaultSpanFunctionsOverridden = true
 		}
 		factory.spanFunctions = mergeFunctionsToMap(factory.spanFunctions, spanFunctions)

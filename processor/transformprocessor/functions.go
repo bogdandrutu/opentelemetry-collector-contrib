@@ -32,7 +32,7 @@ func DefaultDataPointFunctions() []ottl.Factory[ottldatapoint.TransformContext] 
 	return slices.Collect(maps.Values(defaultDataPointFunctionsMap()))
 }
 
-func DefaultSpanFunctions() []ottl.Factory[ottlspan.TransformContext] {
+func DefaultSpanFunctions() []ottl.Factory[*ottlspan.TransformContext] {
 	return slices.Collect(maps.Values(defaultSpanFunctionsMap()))
 }
 
@@ -56,7 +56,7 @@ func defaultDataPointFunctionsMap() map[string]ottl.Factory[ottldatapoint.Transf
 	return metrics.DataPointFunctions()
 }
 
-func defaultSpanFunctionsMap() map[string]ottl.Factory[ottlspan.TransformContext] {
+func defaultSpanFunctionsMap() map[string]ottl.Factory[*ottlspan.TransformContext] {
 	return traces.SpanFunctions()
 }
 

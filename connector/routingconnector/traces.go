@@ -87,7 +87,8 @@ func (c *tracesConnector) ConsumeTraces(ctx context.Context, td ptrace.Traces) e
 		case "span":
 			ptraceutil.MoveSpansWithContextIf(td, matched,
 				func(rs ptrace.ResourceSpans, ss ptrace.ScopeSpans, s ptrace.Span) bool {
-					mtx := ottlspan.NewTransformContext(s, ss.Scope(), rs.Resource(), ss, rs)
+					mtx := ottlspan.BorrowContext(s, ss.Scope(), rs.Resource(), ss, rs)
+					defer ottlspan.ReturnContext(mtx)
 					_, isMatch, err := route.spanStatement.Execute(ctx, mtx)
 					// If error during statement evaluation consider it as not a match.
 					if err != nil {
